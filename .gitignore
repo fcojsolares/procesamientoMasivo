@@ -78,29 +78,6 @@ application-dev.properties
 application-dev.yml
 application-dev.yaml
 
-# Database local files
-*.db
-*.sqlite
-*.sqlite3
-
-# Local data files
-*.csv
-*.sql
-*.dump
-
-# Postman local collections
-*.postman_collection.json
-postman/
-**/postman/*.json
-
-# -----------------------------------------------------------------------------
-# Logs and coverage
-# -----------------------------------------------------------------------------
-logs/
-*.log
-coverage/
-*.lcov
-
 # -----------------------------------------------------------------------------
 # Dependency and package managers (useful for mixed stacks)
 # -----------------------------------------------------------------------------
@@ -114,3 +91,20 @@ pnpm-debug.log*
 # Operating-system generated folders
 # -----------------------------------------------------------------------------
 __MACOSX/
+
+# -----------------------------------------------------------------------------
+# Recursos de Proyecto Permitidos (Postman, SQL DB, Archivos de Prueba CSV)
+# -----------------------------------------------------------------------------
+!*.postman_collection.json
+!*.postman_environment.json
+!postman/
+!**/postman/**
+
+!*.sql
+!schema.sql
+!db/
+!**/sql/**
+
+!*.csv
+!src/main/resources/archivos-ejemplo/
+!src/main/resources/archivos-ejemplo/*
