@@ -5,15 +5,57 @@ spring:
     name: procesamientomasivo
 
   datasource:
-    url: jdbc:postgresql://localhost:5432/postgres
+    url: jdbc:postgresql://localhost:5432/transacciones_bancarias
     username: postgres
-    password: root
+    password: postgres
     driver-class-name: org.postgresql.Driver
+    hikari:
+      maximum-pool-size: 10
+      minimum-idle: 2
+      connection-timeout: 30000
 
-  jpa:
-    hibernate:
-      ddl-auto: validate
-    show-sql: false
-    properties:
+    jpa:
       hibernate:
-        format_sql: true
+        ddl-auto: none
+      open-in-view: false
+      properties:
+        hibernate:
+          jdbc:
+            batch_size: 500
+            order_inserts: true
+            order_updates: true
+          format_sql: false
+
+    sql:
+      init:
+        mode: never
+
+    batch:
+      job:
+        enabled: false
+      jdbc:
+        initialize-schema: never
+
+    servlet:
+      multipart:
+        enabled: true
+        max-file-size: 200MB
+        max-request-size: 200MB
+
+procesamiento:
+  archivo:
+    tamano-bloque: 500
+    encabezados-esperados: id_transaccion,cuenta_origen,cuenta_destino,monto,fecha_hora,tipo_operacion
+    extension-permitida: .csv
+  batch:
+    thread-pool:
+      core-size: 4
+      max-size: 8
+      queue-capacity: 10
+
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html
+    operationsSorter: method
+  api-docs:
+    path: /v3/api-docs
