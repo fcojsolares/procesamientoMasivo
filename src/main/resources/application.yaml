@@ -7,7 +7,7 @@ spring:
   datasource:
     url: jdbc:postgresql://localhost:5432/transacciones_bancarias
     username: postgres
-    password: postgres
+    password: root
     driver-class-name: org.postgresql.Driver
     hikari:
       maximum-pool-size: 10
@@ -26,17 +26,17 @@ spring:
             order_updates: true
           format_sql: false
 
-    sql:
-      init:
-        mode: never
+  sql:
+    init:
+      mode: never
 
-    batch:
-      job:
-        enabled: false
-      jdbc:
-        initialize-schema: never
+  batch:
+    job:
+      enabled: false
+    jdbc:
+      initialize-schema: never
 
-    servlet:
+  servlet:
       multipart:
         enabled: true
         max-file-size: 200MB
