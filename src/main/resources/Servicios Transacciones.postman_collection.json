@@ -1,0 +1,84 @@
+{
+  "info": {
+    "_postman_id": "e3cbead2-a899-45be-8e07-7162d96476bc",
+    "name": "Servicios Transacciones",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "57997346",
+    "_collection_link": "https://go.postman.co/collection/57997346-e3cbead2-a899-45be-8e07-7162d96476bc?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Servicio que procesa el archivo cargado",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "accept",
+            "value": "*/*"
+          }
+        ],
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            {
+              "type": "file",
+              "contentType": "text/csv",
+              "key": "archivo",
+              "src": "/C:/Users/Yo Merengues/Desktop/archivos-ejemplo/transacciones_ok.csv"
+            }
+          ]
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/v1/lotes/procesar",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "v1",
+            "lotes",
+            "procesar"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "servicio que consulta el estado del procesamiento",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "accept",
+            "value": "*/*"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:8080/api/v1/lotes/4",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "v1",
+            "lotes",
+            "4"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "servicio que consulta los errores",
+      "request": {
+        "method": "GET",
+        "header": []
+      },
+      "response": []
+    }
+  ]
+}
