@@ -1,0 +1,116 @@
+# -----------------------------------------------------------------------------
+# General / OS
+# -----------------------------------------------------------------------------
+.DS_Store
+Thumbs.db
+Desktop.ini
+*.log
+*.tmp
+*.temp
+*.swp
+*.swo
+*~
+
+# -----------------------------------------------------------------------------
+# Java / Spring Boot / Gradle
+# -----------------------------------------------------------------------------
+.gradle/
+**/build/
+!gradle/wrapper/gradle-wrapper.jar
+!**/src/main/**/build/
+!**/src/test/**/build/
+
+bin/
+!**/src/main/**/bin/
+!**/src/test/**/bin/
+
+out/
+!**/src/main/**/out/
+!**/src/test/**/out/
+
+*.class
+*.jar
+*.war
+*.ear
+
+# -----------------------------------------------------------------------------
+# IDEs and editors
+# -----------------------------------------------------------------------------
+# IntelliJ IDEA
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# VS Code
+.vscode/
+
+# Eclipse / Spring Tool Suite
+.classpath
+.project
+.settings/
+.factorypath
+.springBeans
+.sts4-cache/
+.apt_generated/
+
+# NetBeans
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+
+# -----------------------------------------------------------------------------
+# Local env / secrets / generated config
+# -----------------------------------------------------------------------------
+.env
+.env.*
+*.env
+*.local
+*.local.properties
+*.local.yml
+*.local.yaml
+application-local.properties
+application-local.yml
+application-local.yaml
+application-dev.properties
+application-dev.yml
+application-dev.yaml
+
+# Database local files
+*.db
+*.sqlite
+*.sqlite3
+
+# Local data files
+*.csv
+*.sql
+*.dump
+
+# Postman local collections
+*.postman_collection.json
+postman/
+**/postman/*.json
+
+# -----------------------------------------------------------------------------
+# Logs and coverage
+# -----------------------------------------------------------------------------
+logs/
+*.log
+coverage/
+*.lcov
+
+# -----------------------------------------------------------------------------
+# Dependency and package managers (useful for mixed stacks)
+# -----------------------------------------------------------------------------
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# -----------------------------------------------------------------------------
+# Operating-system generated folders
+# -----------------------------------------------------------------------------
+__MACOSX/
